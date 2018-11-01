@@ -10,16 +10,12 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
-
-    <link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
-   
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -70,37 +66,15 @@
                                     </form>
                                 </div>
                             </li>
-                            <li class="nav-item">
-                               <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                            </li>
                         @endguest
                     </ul>
                 </div>
             </div>
         </nav>
-        
+
         <main class="py-4">
-            <div class="container">
-                @yield('content')
-            </div>
+            @yield('content')
         </main>
     </div>
-
-
-    
-    <script src="{{asset('js/select2.full.min.js')}}"></script>
-@stack('js')
-   
-
-    
-   
 </body>
 </html>

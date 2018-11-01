@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Genre;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
-class GenreController extends Controller
+class ReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class GenreController extends Controller
      */
     public function index()
     {
-        $genres = Genre::all();
-        return view('admin.genres.index', compact('genres'));
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class GenreController extends Controller
      */
     public function create()
     {
-        return view('admin.genres.create');
+        //
     }
 
     /**
@@ -37,24 +35,16 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-       $request->validate([
-        'name'=>'required',
-       ]);
-
-        $genre = Genre::create([
-            'name'=>$request->name,
-        ]);
-
-        return back()->with('message', 'Genre Created Sucessfully');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Review $review)
     {
         //
     }
@@ -62,23 +52,22 @@ class GenreController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Review $review)
     {
-        $genre = Genre::find($id);
-        return view('admin.genres.edit', compact('genre'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Review $review)
     {
         //
     }
@@ -86,16 +75,11 @@ class GenreController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Review $review)
     {
-        $genre = Genre::find($id);
-
-        if($genre->delete())
-        {
-            return back()->with('message', 'Genre Deleted Successfully');
-        }
+        //
     }
 }
