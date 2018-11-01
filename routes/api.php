@@ -18,3 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('/films', 'FilmController');
+Route::group(['prefix'=>'films'], function(){
+	Route::apiResource('/film/reviews', 'ReviewController');
+});

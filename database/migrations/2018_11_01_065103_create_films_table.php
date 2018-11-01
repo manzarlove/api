@@ -19,7 +19,6 @@ class CreateFilmsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->date('release_date');
-            $table->integer('rating');
             $table->integer('price');
             $table->string('slug');
             $table->string('photo');
